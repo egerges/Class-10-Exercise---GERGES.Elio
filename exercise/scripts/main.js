@@ -51,11 +51,11 @@ window.addEventListener('DOMContentLoaded', function() {
   // - #green
   // - #orange
   // - #red
-  var deckElement = document.querySelector('.Cards');
-  var deckColor = window.location.hashh;
+  var deckElement = document.querySelector('.cards');
+  var deckColor = window.location.hash;
 
   if (deckElement && deckColor) {
-    var className = 'cards--' + deckColor;
+    var className = 'cards--' + deckColor.substring(1, deckColor.length);
     deckElement.classList.add(className);
   }
 });
