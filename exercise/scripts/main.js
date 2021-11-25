@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', function() {
       // collection of selected cards and apply the correct CSS class.
       if (selectedCards.length < 2) {
         selectedCards.push(card);
-        card.classList.add('is-selected');
+        card.classList.toggle('is-selected');
       }
 
       // If we have selected two cards, see if they match.
@@ -27,14 +27,14 @@ window.addEventListener('DOMContentLoaded', function() {
         // apply the correct CSS class.
         if (card1.innerText === card2.innerText) {
           matchedCards.push(card1, card2);
-          card1.classList.add('is-matched');
-          card2.classList.add('is-matched');
+          card1.classList.toggle('is-matched');
+          card2.classList.toggle('is-matched');
         }
 
         // Regardless of whether or not the cards match, deselect them and reset
         // the collection of matched cards.
-        card1.classList.remove('is-selected');
-        card2.classList.remove('is-selected');
+        card1.classList.toggle('is-selected');
+        card2.classList.toggle('is-selected');
         selectedCards = [];
       }
 
